@@ -659,6 +659,7 @@
         name = match && match[1];
       }
 
+      
       return (
         (name ? ("<" + (classify(name)) + ">") : "<Anonymous>") +
         (file && includeFile !== false ? (" at " + file) : '')
