@@ -1,0 +1,38 @@
+import time
+import unittest
+from selenium import webdriver
+
+class imageTest(unittest.TestCase):
+    def setUp(self):
+        self.driver = webdriver.Chrome()
+        self.url = "http://localhost:8080/DBed/index.html"
+        self.driver.maximize_window()
+        time.sleep(3)
+
+    def tearDown(self):
+        self.driver.quit()
+
+    def test_upload(self):
+        driver = self.driver
+        driver.get(self.url)
+        driver.maximize_window()
+        time.sleep(3)
+        driver.find_element_by_xpath("//*[@id='blog-collapse']/form/div[1]/input").send_keys("C:\\Users\\86131\\Desktop\\图片\\3.jpg")
+        time.sleep(3)
+        driver.find_element_by_xpath("//*[@id='blog-collapse']/form/div[2]/input").click()
+        time.sleep(3)
+
+    def test_delete(self):
+        driver = self.driver
+        driver.get(self.url)
+        driver.maximize_window()
+        time.sleep(3)
+        driver.find_element_by_xpath("//*[@id='container']/div[3]/button").click()
+        alert = driver.switch_to.alert
+        time.sleep(3)
+        alert.accept()
+        time.sleep(3)
+        alert.accept()
+        time.sleep(3)
+    if __name__ == "main":
+        unittest.main(verbosity=0)
