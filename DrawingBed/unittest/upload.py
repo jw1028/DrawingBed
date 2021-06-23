@@ -1,7 +1,6 @@
 from selenium import webdriver
 import time
 
-
 driver = webdriver.Chrome()
 url = "http://localhost:8080/DBed/index.html"
 driver.get(url)
