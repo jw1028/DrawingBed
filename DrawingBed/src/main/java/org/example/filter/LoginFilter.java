@@ -60,7 +60,7 @@ public class LoginFilter implements Filter {
         HttpSession session = req.getSession(false);
         if(session != null){
             //获取的键为登录时保存在Session中的键
-            Object username = session.getAttribute("username");
+            Object username = session.getAttribute("user");
             if(username != null){
                 return true;//已登录的用户访问
             }
@@ -73,3 +73,4 @@ public class LoginFilter implements Filter {
 
     }
 }
+
